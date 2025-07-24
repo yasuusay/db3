@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // 入力チェック
 if (
   !isset($_POST['shop_name']) || $_POST['shop_name'] === '' ||
@@ -34,15 +36,9 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
 }
 
 // DB接続
-$dbn = 'mysql:dbname=gs_php;charset=utf8mb4;port=3306;host=localhost';
-$user = 'root';
-$pwd = '';
-
-try {
-  $pdo = new PDO($dbn, $user, $pwd);
-} catch (PDOException $e) {
-  exit('DB接続エラー：' . $e->getMessage());
-}
+include("functions.php");
+$pdo = connect_to_db();
+check_session_id();
 
 // INSERT
 $sql = 'INSERT INTO ramen_table (shop_name, visit_date, comment, rating, image, created_at, updated_at)

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ユーザー登録</title>
+  <style>
+    body {
+      background-color: #fffaf5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 70vh;
+      margin: 0;
+    }
+    
+    .register-container {
+      background: #fffefc;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+      width: 320px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff8c00;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ffb347;
+      border-radius: 6px;
+      font-size: 1em;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #ff8c00;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff8c00;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e57c00;
+    }
+    .login-link {
+      margin-top: 15px;
+      display: block;
+      color: #ff8c00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .login-link:hover {
+      text-decoration: underline;
+    }
+
+    .back-login-button {
+      margin-top: 25px;
+      width: 90%;
+      padding: 12px;
+      background-color: #aaa;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    .back-login-button:hover {
+      background-color: #888;
+    }
+
+  </style>
+</head>
+<body>
+<div class="register-container">    
+  <h1>ユーザー登録</h1>
+  <form action="ramen_register_act.php" method="POST">
+    ユーザー名: <input type="text" name="username"><br>
+    パスワード: <input type="password" name="password"><br>
+    <button type="submit">登録</button>
+    <a href="ramen_login.php" class="back-login-button">ログイン画面に戻る</a>
+</div>
+  </form>
+</body>
+</html>
